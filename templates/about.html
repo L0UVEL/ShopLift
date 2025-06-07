@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{url_for ('static', filename='styles.css')}}">
+    <title>About Us</title>
+</head>
+<body>
+    <header>
+        <img id="logo" src="static/images/logo.png" alt="logo">
+        <h1 class="shopName">ShopLift</h1>
+        <nav class="tabs">
+            <ul>
+                <li><a href="home">Home</a></li>
+                <li><a href="products">Products</a></li>
+                <li class="category">
+                    <a href="category">Categories</a>
+                    <div class="dropContent">
+                        <a href="">Vegetables</a>
+                        <a href="">Fruits</a>
+                        <a href="">Meats</a>
+                        <a href="">Beverages</a>
+                    </div>
+                </li>
+                <li><a class="active" href="about">About Us</a></li>
+            </ul>
+        </nav>
+        <div class="quickAccess">
+            <a href="wishlist"><img src="static/icon/wishlist.svg" alt="wishlist"></a>
+            <a href="cart"><img src="static/icon/cart.svg" alt="cart"></a>
+            <a href="account"><img src="static/icon/profile.svg" alt="profile"></a>
+        </div>
+    </header>
+    <main>
+        
+    </main>
+
+    <footer>
+        <p class="contacts">Contact Us:</p>
+        <div class="quickAccessFoot">
+            <a href=""><img src="static/icon/facebook.svg" alt="facebook"></a>
+            <a href=""><img src="static/icon/gmail.svg" alt="gmail"></a>
+        </div>
+    </footer>
+    <script src="{{url_for ('static', filename='scripts.js')}}"></script>
+</body>
+</html>

@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{url_for ('static', filename='styles.css')}}">
+    <title>Products</title>
+</head>
+<body>
+    <header>
+        <img id="logo" src="static/images/logo.png" alt="logo">
+        <h1 class="shopName">ShopLift</h1>
+        <nav class="tabs">
+            <ul>
+                <li><a href="home">Home</a></li>
+                <li><a class="active" href="products">Products</a></li>
+                <li class="category">
+                    <a href="category">Categories</a>
+                    <div class="dropContent">
+                        <a href="">Vegetables</a>
+                        <a href="">Fruits</a>
+                        <a href="">Meats</a>
+                        <a href="">Beverages</a>
+                    </div>
+                </li>
+                <li><a href="about">About Us</a></li>
+            </ul>
+        </nav>
+        <div class="quickAccess">
+            <a href="wishlist"><img src="static/icon/wishlist.svg" alt="wishlist"></a>
+            <a href="cart"><img src="static/icon/cart.svg" alt="cart"></a>
+            <a href="account"><img src="static/icon/profile.svg" alt="profile"></a>
+        </div>
+    </header>
+
+    <div class="searchBar"><input type="search" placeholder="Search"> <button><img src="static/icon/search.svg" alt="search"></button></div>
+
+
+    <main>
+        <center>
+            <div class="productGrid">
+                <div class="items"> 
+                    <a href="">
+                        <img src="static\images\bluetoothSpeaker.png" alt="productIMG">
+                        <p>Bluetooth Speaker</p>
+                        <p>₱499</p>
+                    </a>
+                </div>
+                <div class="items">
+                    <a href="">
+                        <img src="static\images\coolingStand.jpg" alt="productIMG">
+                        <p>Laptop Cooling Stand</p>
+                        <p>₱599</p>
+                    </a>
+                </div>
+                <div class="items">
+                    <a href="">
+                        <img src="static\images\fastChargingUSBC.jpg" alt="productIMG">
+                        <p>USB C Fast Charging Cable</p>
+                        <p>₱249</p>
+                    </a>
+                </div>
+                <div class="items">
+                    <a href="">
+                        <img src="static\images\JBL_WirelessBluetoothSoundbar.jpg" alt="productIMG">
+                        <p>JBL Bluetooth Soundbar</p>
+                        <p>₱7999</p>
+                    </a>
+                </div>
+                <div class="items">
+                    <a href="">
+                        <img src="static\images\JBLWaveBeam.png" alt="productIMG">
+                        <p>JBL Wavebeam Black</p>
+                        <p>₱2499</p>
+                    </a>
+                </div>
+                <div class="items">
+                    <a href="">
+                        <img src="static\images\kingston500gbSSD.jpg" alt="productIMG">
+                        <p>Kingston 500GB SSD</p>
+                        <p>₱4499</p>
+                    </a>
+                </div>
+                <div class="items">
+                    <a href="">
+                        <img src="static\images\magneticPhoneHolder.jpg" alt="productIMG">
+                        <p>Magnetic Phoneholder for Car</p>
+                        <p>₱100</p>
+                    </a>
+                </div>
+                <div class="items">
+                    <a href="">
+                        <img src="static\images\magsafeCase.jpg" alt="productIMG">
+                        <p>Magsafe Case</p>
+                        <p>₱699</p>
+                    </a>
+                </div>
+                <div class="items">
+                    <a href="">
+                        <img src="static\images\popsocket.jpg" alt="productIMG">
+                        <p>Popsocket</p>
+                        <p>₱50</p>
+                    </a>
+                </div>
+                <div class="items">
+                    <a href="">
+                        <img src="static\images\sonyNoiseCancellingHeadphones.png" alt="productIMG">
+                        <p>Sony Noise Cancelling Headphones</p>
+                        <p>₱5999</p>
+                    </a>
+                </div>
+                <div class="items"> 
+                    <a href="">
+                        <img src="static\images\temperedGlass.jpg" alt="productIMG">
+                        <p>Tempered Glass</p>
+                        <p>₱150</p>
+                    </a>
+                </div>
+                <div class="items">
+                    <a href="">
+                        <img src="static\images\USBcDockingStation.png" alt="productIMG">
+                        <p>USB C to 3 USB Docking Station</p>
+                        <p>₱650</p>
+                    </a>
+                </div>
+                <div class="items">
+                    <a href="">
+                        <img src="static\images\webcamFHD_USB.png" alt="productIMG">
+                        <p>FHD Webcam</p>
+                        <p>₱799</p>
+                    </a>
+                </div>
+                <div class="items">
+                    <a href="">
+                        <img src="static\images\wirelessKeyboardAndMouse.jpg" alt="productIMG">
+                        <p>Wireless Keyboard and Mouse</p>
+                        <p>₱349</p>
+                    </a>
+                </div>
+                <div class="items">
+                    <a href="">
+                        <img src="static\images\xiaomiNeckbandEarphones.jpg" alt="productIMG">
+                        <p>Xiaomi Neckband Earphones</p>
+                        <p>₱899</p>
+                    </a>
+                </div>
+                
+            </div>
+        </center>
+            
+    </main>
+
+    <footer>
+        <p class="contacts">Contact Us:</p>
+        <div class="quickAccessFoot">
+            <a href=""><img src="static/icon/facebook.svg" alt="facebook"></a>
+            <a href=""><img src="static/icon/gmail.svg" alt="gmail"></a>
+        </div>
+    </footer>
+    <script src="{{url_for ('static', filename='scripts.js')}}"></script>
+</body>
+</html>

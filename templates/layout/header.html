@@ -1,0 +1,24 @@
+<header>
+    <h1 class="shopName">ShopLift</h1>
+        <img id="logo" src="{{url_for ('static', filename='images/logo.png')}}" alt="logo">
+        <nav class="tabs">
+            <ul>
+                <li><a id="home" class="" href="{{url_for ('Home')}}" onclick="">Home</a></li>
+                <li><a id="products" class="" href="{{url_for ('Products')}}" onclick="">Products</a></li>
+                <li id="category" class="category">
+                    <a href="{{url_for ('Category')}}" onclick="">Categories</a>
+                    <div class="dropContent">
+                        <a class="tabs" href="">Mobile Phone Accessories</a>
+                        <a class="tabs" href="">Audio Devices</a>
+                        <a class="tabs" href="">Computer and Laptop Accessories</a>
+                    </div>
+                </li>
+                <li><a id="about" href="{{url_for ('About')}}" onclick="">About Us</a></li>
+            </ul>
+        </nav>
+    <div class="quickAccess">
+            <a href="wishlist"><img src="{{url_for ('static', filename='icon/wishlist.svg')}}" alt="wishlist"></a>
+            <a href="cart"><img src="{{url_for ('static', filename='icon/cart.svg')}}" alt="cart"></a>
+            <a href="account"><img src="{{url_for ('static', filename='icon/profile.svg')}}" alt="profile"></a>
+    </div>
+</header>

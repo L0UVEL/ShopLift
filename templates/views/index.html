@@ -1,0 +1,23 @@
+{% extends 'layout/base.html'%}
+
+{% block content %}
+    <div class="banner">
+        <img src="{{url_for ('static', filename='images/banner1.png')}}" alt="">
+        
+    </div>
+    <center>
+            <h3 class="contentTitle">Best Buy!</h3>
+            <hr>
+            <div class="productGrid">
+                {% for products in myresult %}
+                <div class="items"> 
+                    <a href="">
+                        <img src="{{url_for ('static', filename='images/'~ products['productID'] ~'.png')}}" alt="productIMG">
+                        <p>{{products['productName']}}</p>
+                        <p>{{products['productPrice']}}</p>
+                    </a>
+                </div>
+                {% endfor %}
+            </div>
+        </center>
+{% endblock %}
