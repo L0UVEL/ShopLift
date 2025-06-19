@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request, redirect
 import mysql.connector
 
 connectionPool = mysql.connector.pooling.MySQLConnectionPool(
@@ -36,7 +36,7 @@ def About():
 @app.route('/account')
 def Account():
     title = "Account"
-    return render_template("views/account.html",title=title)
+    return render_template("views/register.html",title=title)
 
 @app.route('/wishlist')
 def Wishlist():
@@ -53,5 +53,20 @@ def Category():
     title = "Categories"
     return render_template("views/category.html",title=title)
 
+@app.route('/handleData', methods = ['POST','GET'])
+def handleData():
+    mydb = connectionPool.get_connection()
+    mycursor = mydb.cursor(dictionary=True)
+    if request.method == 'POST':
+        fname = request.form['fname']
+        lname = request.form['lname']
+        password = request.form['password']
+        address = request.form['address']
+        contactNumber = request.form['contactNumber']
+    sql = ("INSERT INTO users (fname,lname,password,address,contactNumber) VALUES (%s,%s,%s,%s,%s)")
+    val = (fname,lname,password,address,contactNumber)
+    mycursor.execute(sql,val)
+    mydb.commit()
+    return Home()
 if __name__ == "__main__":
     app.run(debug=True)
