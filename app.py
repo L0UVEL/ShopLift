@@ -1,5 +1,6 @@
 from flask import Flask, render_template, request, redirect
 import mysql.connector
+import os
 
 connectionPool = mysql.connector.pooling.MySQLConnectionPool(
     pool_name="mypool",
@@ -36,7 +37,7 @@ def About():
 @app.route('/account')
 def Account():
     title = "Account"
-    return render_template("views/register.html",title=title)
+    return render_template("views/account.html",title=title)
 
 @app.route('/wishlist')
 def Wishlist():
@@ -63,10 +64,40 @@ def handleData():
         password = request.form['password']
         address = request.form['address']
         contactNumber = request.form['contactNumber']
-    sql = ("INSERT INTO users (fname,lname,password,address,contactNumber) VALUES (%s,%s,%s,%s,%s)")
-    val = (fname,lname,password,address,contactNumber)
-    mycursor.execute(sql,val)
-    mydb.commit()
+        sql = ("INSERT INTO users (fname,lname,password,address,contactNumber) VALUES (%s,%s,%s,%s,%s)")
+        val = (fname,lname,password,address,contactNumber)
+        mycursor.execute(sql,val)
+        mydb.commit()
+    return "SUCESSFULLY REGISTERED"
+
+@app.route('/addProduct', methods = ['POST','GET'])
+def addProduct():
+    mydb = connectionPool.get_connection()
+    mycursor = mydb.cursor(dictionary=True)
+    if request.method == 'POST':
+        productName = request.form['productName']
+        productPrice = request.form['productPrice']
+        sql = ("INSERT INTO products (productName,productPrice) VALUES (%s,%s)")
+        val = (productName,productPrice)
+        mycursor.execute(sql,val)
+        mydb.commit()
+    
+    os.makedirs('static/images', exist_ok=True)
+    existing_files = [f for f in os.listdir('static/images') if f.endswith('.png')]
+    next_number = len(existing_files) + 1 
+
+    filename = f"{next_number}.png"
+
+
+    if 'fileIMG' not in request.files:
+        return 'No File Part'
+    file = request.files['fileIMG']
+    if file.filename == '':
+        return 'No Selected file'
+    if file:
+        file.save(os.path.join('static/images',filename))
     return Home()
+
+
 if __name__ == "__main__":
     app.run(debug=True)

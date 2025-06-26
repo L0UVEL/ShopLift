@@ -2,7 +2,7 @@
 
 {% block content %}
     <div class="banner">
-        <img src="{{url_for ('static', filename='images/banner1.png')}}" alt="">
+        <img src="{{url_for ('static', filename='icon/banner1.png')}}" alt="">
         
     </div>
     <center>
@@ -14,7 +14,7 @@
                     <a href="">
                         <img src="{{url_for ('static', filename='images/'~ products['productID'] ~'.png')}}" alt="productIMG">
                         <p>{{products['productName']}}</p>
-                        <p>{{products['productPrice']}}</p>
+                        <p>₱{{products['productPrice']}}</p>
                     </a>
                 </div>
                 {% endfor %}
